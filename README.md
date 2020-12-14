@@ -1,5 +1,7 @@
 # README
 
+The backend for my Mod 5 Flatiron project: Trash Tracker. Using Ruby and Rails.
+
 # https://github.com/learn-co-students/nyc-web-091420/tree/master/31-project-setup
 
 This README would normally document whatever steps are necessary to get the
