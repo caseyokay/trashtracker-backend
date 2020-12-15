@@ -1,0 +1,2 @@
+class TrashCategory < ApplicationRecord
+end
