@@ -24,7 +24,7 @@ TrashCategory.create!(
 
 trash = TrashCategory.create!(
     kind: "recycling",
-    image: "https://hips.hearstapps.com/hmg-prod/images/plastic-recycling-symbols-1602875439.jpg"
+    image: "https://www.coralville.org/ImageRepository/Document?documentID=9113"
 )
 
 5.times do
@@ -36,7 +36,7 @@ trash = TrashCategory.create!(
 end
 
 user = User.create!(
-    name: Faker::Movies::LordOfTheRings.character,
+    name: "Galadriel",
     email: "lotr@gmail.com",
     password: 12345
 )
