@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "🔫 Deleting Old records"
-# TrashCategory.destroy_all
 User.destroy_all
 TrashItem.destroy_all
+TrashCategory.destroy_all
 
 
 puts "🧝‍♀️ Creating new records!"

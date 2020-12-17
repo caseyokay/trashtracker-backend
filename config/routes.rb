@@ -12,13 +12,13 @@ Rails.application.routes.draw do
   #GET /api/v1/trash_categories/:id
   namespace :api do
     namespace :v1 do
-      resources :trash_categories, only: [:show, :index]
+      resources :trash_categories
     end
   end
     #GET /api/v1/trash_items/:id
     namespace :api do
       namespace :v1 do
-        resources :trash_items, only: [:show, :index]
+        resources :trash_items, only: [:show, :index, :create, :destroy]
       end
     end
 end
