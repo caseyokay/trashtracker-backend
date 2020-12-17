@@ -8,4 +8,11 @@ Rails.application.routes.draw do
       resources :users, only: [:show, :index]
     end
   end
+
+  #GET /api/v1/trash_categories
+  namespace :api do
+    namespace :v1 do
+      resources :trash_categories, only: [:show, :index]
+    end
+  end
 end
