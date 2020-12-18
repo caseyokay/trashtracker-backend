@@ -19,11 +19,11 @@ class Api::V1::TrashItemsController < ApplicationController
     def destroy
         trash_item = TrashItem.find(params[:id])
         trash_item.destroy
-        #render json?
+        render json: {}
     end
     
     private
     def trash_item_params
-        params.require(:trash_item).permit(:description, :date, :user, :trash_category)
+        params.require(:trash_item).permit(:description, :date, :user_id, :trash_category_id)
     end
 end
