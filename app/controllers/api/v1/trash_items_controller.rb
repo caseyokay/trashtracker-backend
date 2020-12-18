@@ -16,9 +16,15 @@ class Api::V1::TrashItemsController < ApplicationController
         render json: trash_item
     end
 
+    def update
+        trash_item = TrashItem.find(params[:id])
+        trash_item.update!(trash_item_params)
+        render json: trash_item
+    end
+
     def destroy
         trash_item = TrashItem.find(params[:id])
-        trash_item.destroy
+        trash_item.destroy!
         render json: {}
     end
     

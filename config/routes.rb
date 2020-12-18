@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     #GET /api/v1/trash_items/:id
     namespace :api do
       namespace :v1 do
-        resources :trash_items, only: [:show, :index, :create, :destroy]
+        resources :trash_items, only: [:show, :index, :create, :destroy, :update]
       end
     end
 end
