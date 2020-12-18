@@ -1,13 +1,15 @@
 class Api::V1::TrashItemsController < ApplicationController
+    # skip_before_action :verify_authenticity_token
+    def index
+        trash_items = TrashItem.all 
+        render json: trash_items 
+    end
+
     def show
         trash_item = TrashItem.find(params[:id])
         render json: trash_item
     end
 
-    def index
-        trash_items = TrashItem.all 
-        render json: trash_items 
-    end
 
     def create
         trash_item = TrashItem.create!(trash_item_params)
@@ -17,6 +19,7 @@ class Api::V1::TrashItemsController < ApplicationController
     def destroy
         trash_item = TrashItem.find(params[:id])
         trash_item.destroy
+        #render json?
     end
     
     private
