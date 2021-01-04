@@ -49,6 +49,7 @@ user = User.create!(
     TrashItem.create!(
         description: Faker::Food.dish,
         date: Faker::Date.between(from: 2.days.ago, to: Date.today),
+        image: "https://i.ibb.co/yPZyqWx/Screen-Shot-2021-01-04-at-1-41-32-PM.png",
         user: user,
         trash_category: trash
     )

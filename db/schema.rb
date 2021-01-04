@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_12_15_012711) do
   create_table "trash_items", force: :cascade do |t|
     t.string "description"
     t.string "date"
+    t.string "image"
     t.integer "user_id"
     t.integer "trash_category_id"
     t.datetime "created_at", precision: 6, null: false

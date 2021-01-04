@@ -1,5 +1,5 @@
 class Api::V1::AuthController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+    # skip_before_action :authorized, only: [:create]
     def profile
         render json: { user: UserSerializer.new(current_user) }, status: :accepted
       end
@@ -7,7 +7,7 @@ class Api::V1::AuthController < ApplicationController
     def create
       @user = User.find_by(email: params[:email])
       #User#authenticate comes from BCrypt
-      byebug
+    #   byebug
       if @user && @user.authenticate(params[:password])
         # encode token comes from ApplicationController
         token = encode_token({ user_id: @user.id })
