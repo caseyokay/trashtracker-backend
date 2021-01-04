@@ -34,15 +34,15 @@ trash = TrashCategory.create!(
 5.times do
     User.create!(
         name: Faker::TvShows::Buffy.character,
-        email: "lotr@gmail.com",
-        password: 12345
+        email: Faker::Internet.email,
+        password: "12345"
     )
 end
 
 user = User.create!(
     name: "Casey",
     email: "lotr@gmail.com",
-    password: 12345
+    password: "casey12345"
 )
 
 3.times do
