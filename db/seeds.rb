@@ -12,24 +12,21 @@ TrashCategory.destroy_all
 
 
 puts "🧝‍♀️ Creating new records!"
-TrashCategory.create!(
+landfill = TrashCategory.create!(
     kind: "landfill",
     image: "https://i.ibb.co/dKM699P/Screen-Shot-2020-12-26-at-8-49-08-PM.png"
 )
-#"https://dur-cjweb.newscyclecloud.com/storyimage/CJ/20200904/NEWS01/200909926/AR/0/AR-200909926.jpg"
 
-TrashCategory.create!(
+compost = TrashCategory.create!(
     kind: "compost",
     image: "https://i.ibb.co/kDH0cL3/Screen-Shot-2020-12-26-at-8-45-59-PM.png"
 )
-#"https://cdn.shopify.com/s/files/1/0272/1982/0604/articles/composting-image.jpg?v=1572870863"
 
-trash = TrashCategory.create!(
+recycling = TrashCategory.create!(
     kind: "recycling",
     image: "https://i.ibb.co/7pyKWMX/Screen-Shot-2020-12-26-at-8-41-32-PM.png"
 )
 
-# "https://www.coralville.org/ImageRepository/Document?documentID=9113"
 
 5.times do
     User.create!(
@@ -45,15 +42,45 @@ user = User.create!(
     password: "casey12345"
 )
 
+userPreset = User.create!(
+    name: "preset",
+    email: "preset@gmail.com",
+    password: "preset12345"
+)
+
 3.times do
     TrashItem.create!(
         description: Faker::Food.dish,
         date: Faker::Date.between(from: 2.days.ago, to: Date.today),
         image: "https://i.ibb.co/yPZyqWx/Screen-Shot-2021-01-04-at-1-41-32-PM.png",
         user: user,
-        trash_category: trash
+        trash_category: recycling
     )
 end
+
+TrashItem.create!(
+    description: "bottle",
+    date: Date.today,
+    image: "https://i.ibb.co/G9L6Y65/Screen-Shot-2021-01-04-at-5-19-04-PM.png",
+    user: userPreset,
+    trash_category: recycling
+)
+
+TrashItem.create!(
+    description: "meal scraps",
+    date: Date.today,
+    image: "https://i.ibb.co/kDH0cL3/Screen-Shot-2020-12-26-at-8-45-59-PM.png",
+    user: userPreset,
+    trash_category: compost
+)
+
+TrashItem.create!(
+    description: "plastic wrap",
+    date: Date.today,
+    image: "https://i.ibb.co/yfcmv63/Screen-Shot-2021-01-04-at-5-23-39-PM.png",
+    user: userPreset,
+    trash_category: landfill
+)
 
 puts "🔮 Done!"
 
