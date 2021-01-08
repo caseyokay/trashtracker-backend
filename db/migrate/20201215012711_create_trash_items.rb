@@ -4,6 +4,7 @@ class CreateTrashItems < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :date
       t.string :image
+      t.string :preset
       t.integer :user_id
       t.integer :trash_category_id
       # t.belongs_to :user, null: false, foreign_key: true

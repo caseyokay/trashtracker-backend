@@ -53,6 +53,7 @@ userPreset = User.create!(
         description: Faker::Food.dish,
         date: Faker::Date.between(from: 2.days.ago, to: Date.today),
         image: "https://i.ibb.co/yPZyqWx/Screen-Shot-2021-01-04-at-1-41-32-PM.png",
+        preset: false,
         user: user,
         trash_category: recycling
     )
@@ -62,6 +63,7 @@ TrashItem.create!(
     description: "bottle",
     date: Date.today,
     image: "https://i.ibb.co/G9L6Y65/Screen-Shot-2021-01-04-at-5-19-04-PM.png",
+    preset: true,
     user: userPreset,
     trash_category: recycling
 )
@@ -70,6 +72,7 @@ TrashItem.create!(
     description: "meal scraps",
     date: Date.today,
     image: "https://i.ibb.co/kDH0cL3/Screen-Shot-2020-12-26-at-8-45-59-PM.png",
+    preset: true,
     user: userPreset,
     trash_category: compost
 )
@@ -78,6 +81,7 @@ TrashItem.create!(
     description: "plastic wrap",
     date: Date.today,
     image: "https://i.ibb.co/yfcmv63/Screen-Shot-2021-01-04-at-5-23-39-PM.png",
+    preset: true,
     user: userPreset,
     trash_category: landfill
 )
